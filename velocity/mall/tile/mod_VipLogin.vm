@@ -1,0 +1,167 @@
+<style>
+    .vip-info-frm .form-group {margin-bottom: 20px;}
+    .vip-info-frm .form-control { font-size: 14px; box-sizing: border-box; width: 100%;padding: 10px 8px; border-radius: 4px;background-color: #fff; background-image: none;border: 1px solid rgba(0,0,0,.15);outline: 0;color: rgba(0,0,0,.7);}
+    .vip-info-frm .btn {padding:5px 12px;}
+    .vip-info-frm .form-control:focus {border-color: #66afe9;outline: 0;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, .6);}
+    .vip-info-frm .msg-actions .ui-msg-bd {padding:0 15px;}
+    .vip-info-frm .vip-save-btn {padding:10px;}
+    .vip-info-frm .error {height: 40px; line-height: 40px; background-color: rgba(0,0,0,.8); color:#fff; position: fixed; top:-42px; left: 0; right: 0; padding: 0 15px;-webkit-transition:all .25s ease-out; opacity: 0;}
+    .vip-info-frm .error.in { top:0; opacity: 1;}
+</style>
+<script id="vipFrmDia" type="text/html">
+    <form action="" class="vip-info-frm" id="vipInfoFrm">
+    <div class="error">手机号格式不正确</div>
+        <input type="hidden" name="supplierId" value="" id="vipSuid">
+        <div class="form-group">
+            <input type="text" class="form-control pct60 mr10" name="name" placeholder="请输入姓名"onkeyup="this.value=this.value.replace(/^ +| +$/g,'')">
+            <label><input type="radio" name="gender" value="1" checked> 男</label>
+            <label><input type="radio" name="gender" value="2"> 女</label>
+        </div>
+        <div class="form-group">
+            <input class="form-control" placeholder="请输入手机号码" type="number" name="mobile" required maxLength="13" id="vipPhone" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')">
+        </div>
+        <div class="form-group hide" id="vCodeIpt">
+            <input type="text" class="form-control pct60 mr10" placeholder="请输入您收到的验证码" id="vipVCode" name="verifyCode" onkeyup="this.value=this.value.replace(/^ +| +$/g,'')">
+            <a href="javascript:;" class="btn btn-red" id="vipGetVCodeBtn">获取验证码</a>
+        </div>
+        <div class="form-group form-action">
+            <a href="javascript:;" class="btn btn-block tc vip-save-btn" id="btnSaveVipInfo">确定</a>
+        </div>
+    </form>
+</script>
+
+<script>
+var Mod_VipLogin = {
+    o:{
+        $msg:null
+    },
+    show:function(suid, successFn, failFn){
+        var suid = $('#suid').val() || '';
+        if(suid === '') return;
+        var o = this.o, self = this;
+        // 查询信息
+        $.post('getCustomerCard.json',{supplierId:suid},function(data){
+            if(data.status==='0'){
+                // 判断是否有手机号
+                if(data.result.customer){
+                    if(!data.result.customer.phone){
+                        $.msg.actions({
+                            title:'填写基本信息',
+                            content:$('#vipFrmDia').html(),
+                            closeByMask: false,
+                            onOpened:function(dia){
+                                $('#vipInfoFrm').val(suid);
+                                $('#btnSaveVipInfo').on('click', self.submitEv.bind(self,suid,dia,successFn,failFn));
+                                self.bindEvents(suid);
+                                o.$msg = $('#vipInfoFrm').find('.error');
+                            }
+                        });
+                        
+                    }else{
+                        successFn && successFn(data.result.customer);
+                    }
+                }
+            }else{
+                // 查询用户vip信息失败
+                failFn && failFn();
+            }
+        });
+
+    },
+    bindEvents:function(suid){
+        this.onFocusEv();
+        this.getVcodeEv(suid);
+    },
+    submitEv:function(suid, dia, successFn, fialFn){
+        var o = this.o, self = this;
+        var p = $('#vipPhone').val().trim(), v="";
+        if(p===''){
+            o.$msg.text('手机号不能为空！').addClass('in');
+            return false;
+        }
+
+        if(!(/^1[3-9]\d{9}$/.test(p))){
+            o.$msg.text('手机号格式不正确！').addClass('in');
+            return false;
+        }
+
+        if(!$('#vCodeIpt').is(":hidden")){
+            v= $('#vipVCode').val().trim();
+            if(v === ''){
+                o.$msg.text('验证码不能为空！').addClass('in');
+                return false;
+            }
+        }
+
+        if($('#vCodeIpt').is(":hidden")){
+            // 2.不加验证码更新手机号接口
+            $.post('updateMobile.json', $('#vipInfoFrm').serialize(), function(res){
+                if(res.status === '0'){
+                    // res.result.i === 2 表示需要验证码
+                        // 登陆成功，执行回调，关闭弹出层
+                        successFn && successFn(vRes.result.customer);
+                        dia.close();
+                }else if(res.status === '2'){
+                    o.$msg.text('账户存在问题，请输入验证码！').addClass('in');
+                    $('#vCodeIpt').show();
+                    self.getRegisterCode(p);
+                }
+            });
+        }else{
+            // 3.若接2返回失败，调用加验证码更新手机号接口
+            $.post('updateMobileAndVerifyCode.json', $('#vipInfoFrm').serialize(), function(vRes){
+                if(vRes.status === '0'){
+                    successFn && successFn(vRes.result.customer);
+                    dia.close();
+                }else{
+                   o.$msg.text(vRes.errmsg).addClass('in');
+                }
+            });
+        }
+    },
+    getRegisterCode: function(phone){
+        $.ajax({
+            url:'../user/getRegisterCodeToSupplier.json',
+            method:'POST',
+            data:{'phone':phone},
+            success:function(data){
+                if(data.status === '0'){ // 成功 进入倒计时
+                    $('#vipGetVCodeBtn').addClass('disabled');
+                    var t=60;
+                    (function(){
+                        if(t===0){
+                            $('#vipGetVCodeBtn').text('重新获取').removeClass('disabled');
+                            return;
+                        }
+                        $('#vipGetVCodeBtn').text(t+'s');
+                        t--;
+                        setTimeout(arguments.callee,1000);
+                    })();
+                }else if(data.status === '1'){
+                    $('#vipGetVCodeBtn').addClass('disabled');
+                    mobileAlert('您请求过于频繁，请稍后再试！');
+                }else{
+                    $('#vipGetVCodeBtn').text('重新获取').removeClass('disabled');
+                }
+            },
+            error:function(){
+                mobileAlert('获取验证码失败，请检查网络连接或刷新重试！');
+            }
+        });
+    },
+    getVcodeEv:function(){
+        var self = this;
+        $('#vipGetVCodeBtn').on('click', function(){
+            self.getRegisterCode($('#vipPhone').val().trim());
+        });
+    },
+    onFocusEv:function(){
+        var o = this.o;
+        $('#vipInfoFrm').on('focus', 'input', function(){
+            o.$msg.removeClass('in').text('');
+        });
+    }
+};
+
+Mod_VipLogin.show();
+</script>

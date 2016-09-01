@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" href="https://qncdn.qiakr.com/favicon.ico">
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="full-screen" content="yes">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<link href="../css/user/weui.css" rel="stylesheet" type="text/css">
+<style>
+/*全局CSS定义开始*/
+body {line-height: 1.6; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color:#444; font-size:.12rem; background:#efeff4; }
+* {margin: 0; padding: 0; -webkit-tap-highlight-color:transparent;outline:0;}
+a,img{border: 0; }
+a{text-decoration: none; }
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1466606332_761648.ttf') format('truetype'); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+}
+
+.iconfont{font-family:"iconfont" !important;font-style:normal;display: inline-block;-webkit-font-smoothing: antialiased;-webkit-text-stroke-width: 0.2px;-moz-osx-font-smoothing: grayscale; }                 
+.bg-white{ background:#fff;}
+.img-auto img{width:100%;height:auto;}/*图片宽度自适应定义*/
+
+.clearfix:after {visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}
+.clearfix{*zoom:1;}
+.fl,
+.fr { display:inline;}
+.fl { float:left;}
+.fr { float:right;}
+.ell{text-overflow:ellipsis; white-space:nowrap; overflow:hidden;}
+.text-red{ color:#e72a14;}
+.text-green{color: #0a9f73;}
+.text-right{ text-align:right;}
+.text-center{ text-align:center;}
+.block-section{ background:#fff; border-radius:5px; padding:.17rem;}
+.db{display: block;}
+.dn{display: none;}
+/*loading*/
+.popLoading{position: fixed;padding: 0 15px;box-sizing:border-box;display: -webkit-box;-webkit-box-align: center;-webkit-box-pack: center;z-index:99;background: rgba(0,0,0,0.6);top:0;left: 0; right: 0; bottom: 0;}
+.popLoading .cont{background: rgba(0,0,0,0.6);width: 50%;color: #fff;text-align: center;padding: 20px;border-radius: 8px;}
+@-webkit-keyframes loadingAmt{
+0%   {-webkit-transform:rotate(0deg);}
+100% {-webkit-transform:rotate(360deg);}
+}
+.popLoading .loadingAmt .img{width: 40px;height: 40px;-webkit-animation: loadingAmt 0.5s linear infinite;margin: 0 auto;padding: 5px;border-radius: 50%;background: -webkit-linear-gradient(#444,#eee);}
+.popLoading .loadingAmt .img2{width: 40px;height: 40px;border-radius: 50%;background: #2a2a2a;}
+
+.ma-box{margin:0 15px;position:fixed;top:45%;left:0;text-align:center;background:rgba(0,0,0,0.7);z-index:9999;padding:10px;line-height:20px;color:#fff;border-radius:6px;font-size:15px}
+.ma-box.toast{padding: 15px 20px;background: rgba(0,0,0,0.8);text-align: left;margin: 0 50px;}
+.ma-box-back{position: fixed;z-index: 9998;top: 0;left: 0;width: 100%;height: 100%;background:rgba(0,0,0,0.5);}
+
+.loadingBox a{display: block;text-align:center;padding: 15px 0;width: 100%;color: #333;}
+
+/*WeUI自适应调整CSS开始*/
+.weui_cells{ font-size:.15rem;}
+.weui_cells_tips,.weui_cells_title{ font-size:.11rem;}
+.weui_label{ width:.86rem;}
+.wbox{display: -webkit-box;}
+.wbox-1{-webkit-box-flex: 1;display: block;width: 0;}
+.weui_btn_primary{background: #0a9f73;}
+/*核销有优惠券开始*/
+.block-section .text-red{ display:block;}
+.use-coupon-title{ text-align:center; font-size:.14rem; padding:.1rem .29rem;}
+.use-coupon-title h2{ font-size:.14rem;}
+
+/*开通会员卡页面*/
+.weui_cells_form .weui_cell_ft.text-tips{ font-size:.13rem; color:#0a9f73;}
+.weui_cells_form .weui_cell_ft.text-tips.disabled{color:#999;}
+
+/*优惠券详情页面*/
+.coupon-detail-top{padding: .1rem;}
+.coupon-detail-top img{width: 100%;display: block;}
+.my-article.weui_article  h2{ padding:.05rem 0;}
+.weui_article {line-height: 1.2;}
+.weui_article .idt{width:24px;}
+.weui_article .wbox{padding-bottom: 5px;}
+.bar-footer{ position:fixed; bottom:0; left:0; height:.38rem; width:100%;}
+.bar-footer ~ .container{margin-bottom: .38rem;}
+.bar-footer .btn-red{ text-align:center; line-height:.38rem; background:#ea3f2c; display:block; color:#fff;}
+.bar-footer .btn-green{ text-align:center; line-height:.38rem; background:#0a9f73; display:block; color:#fff;}
+.bar-footer .btn-blue{ text-align:center; line-height:.39rem; background:#22becb; display:block; color:#fff;}
+.noResult{padding-top: 10px;border: none!important;}
+.noResult span{display: inline-block;text-align: center;width: 100%;line-height: 36px;padding-top: 85px;background: url(https://qncdn.qiakr.com/mall/noData.png) top center no-repeat;font-size: 16px;color: #999;text-align: center;background-size: 80px 80px;}
+.noResult span.store{background-image: url(https://qncdn.qiakr.com/mall/noStore.png);}
+.noResult span.coupon{background-image: url(https://qncdn.qiakr.com/mall/noCoupon.png);}
+/* mask */
+.weui_mask {opacity: 0; visibility: hidden; background: rgba(0, 0, 0, 0); -webkit-transition: background-color .3s; transition: background-color .3s; }
+.weui_mask.weui_mask_visible,.popup-overlay.weui_mask_visible {opacity: 1; visibility: visible;background-color: rgba(0,0,0,.6);}
+
+.weui_toast.onlytxt {min-height: 2em; padding: 8px 0 0;}
+.weui_dialog {display: none;}
+.weui_dialog.modal_in {display: block;}
+.weui_dialog.modal_out {display: none;}
+/* toast */
+.toast .weui_toast {-webkit-transition-property: transform, opacity; transition-property: transform, opacity; -webkit-transform: translate3d(0, 0, 0) scale(1.185); transform: translate3d(0, 0, 0) scale(1.185); }
+.toast {background-color: rgba(255,255,255,0); -webkit-transition:background-color .2s; }
+.toast.modal_in .weui_toast{-webkit-transition:all .2s linear;transition:all .2s linear; opacity: 1; -webkit-transform: scale(1); transform: scale(1);}
+.toast.modal_out .weui_toast {-webkit-transition:all .2s linear;transition:all .2s linear; opacity: 0; -webkit-transform: scale(.7); transform: scale(.7);}
+.toast.modal_in {background-color: rgba(255,255,255,.3);}
+.toast.modal_out {background-color: rgba(255,255,255,0);}
+/* loading & toast */
+.weui_loading_toast .weui_toast_content {margin-top: 60%;}
+</style>
+<script src="//res.qiakr.com/plugins/mall/zrt.min.js"></script>
+
+<script>
+  if(!navigator.userAgent.match(/MicroMessenger/i) && location.pathname.indexOf('xmall')<0) {
+      location.href="openWeixin.htm";
+  }
+
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0ae38da02c36d427b45394d1982689c8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+  (function(doc, win) {
+    // 移动端REM自适应
+    var docEl = doc.documentElement, 
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth=docEl.clientWidth||320;
+          var docCls = docEl.classList;
+          var width = clientWidth < 320 ? 320 : clientWidth > 640 ? 640 : clientWidth;
+          docEl.style.fontSize = 100 * (width / 320) + 'px';
+          docEl.style.opacity=1;
+
+          // 添加屏幕标识，便于文字调整
+          if(375 <= clientWidth && clientWidth < 414){
+            docCls.add('view6');
+          }else if(414 <= clientWidth){
+            docCls.add('view6s');
+          }else{
+            docCls.remove('view6');
+            docCls.remove('view6s');
+          }
+        };
+    docEl.style.opacity=0;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+    // IOS8下1px线条改为0.5px
+    if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
+        var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),
+            version = parseInt(v[1], 10);
+        if(version >= 8){
+            document.documentElement.classList.add('hairlines');
+        }
+    }
+    })(document, window);
+</script>

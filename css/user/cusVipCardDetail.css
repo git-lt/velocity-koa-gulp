@@ -1,0 +1,55 @@
+html,body { min-width: 320px; max-width: 750px;  margin:0 auto; }
+body {padding-bottom:45px; background-color: #fff;}
+* {box-sizing: border-box;}
+main {padding-bottom: 1.333333rem;}
+.h-view,.v-view { display: -webkit-box; display: -webkit-flex; display: flex;  -webkit-box-direction: normal; }
+.h-view { -webkit-box-orient: horizontal; -webkit-flex-direction: row; flex-direction: row; }
+.v-view { -webkit-box-orient: vertical; -webkit-flex-direction: column; flex-direction: column; }
+
+.cus-level-base {text-align: center; padding: 0.6rem; height: 9.333333rem; background: #2F2A27 url(//qncdn.qiakr.com/wx/gradeBg@2x.png) no-repeat center center; background-size: 100%; }
+.cus-avatar {width: 1.28rem; height: 1.28rem; border:2px solid #fff; background-color:#fff; border-radius: 50%; display: inline-block;;}
+.cus-name {color:#fff; font-size: 0.4rem; line-height: 1.5;}
+
+.cus-level-list {margin-top: 0.533333rem;}
+
+/*.cus-level-list .level-img { width: 0.706667rem; height: 0.706667rem; display: inline-block; margin-bottom: 0.133333rem; background: none; position: relative; overflow: hidden; }
+.cus-level-list .level-img:after{content: ''; display: block; width: 10000%; height: 10000%; position: absolute; left: 0; top: 0; background-image: url(//qncdn.qiakr.com/wx/level_sprite@2x.png); background-repeat: no-repeat; background-size: 554.666667rem; -webkit-transform-origin: 0 0; -webkit-transform: scale(.01); transform-origin: 0 0; transform: scale(.01); }
+.cus-level-list .level-img.active.level1:after {background-position:-346.3333rem; }
+.cus-level-list .level-img.active.level2:after {background-position:-207.2rem; }
+.cus-level-list .level-img.active.level3:after {background-position:-68.6667rem; }
+.cus-level-list .level-img.active.level4:after {background-position:-485.6667rem }
+
+
+.cus-level-list .level-img.level1:after {background-position:-276.679rem; }
+.cus-level-list .level-img.level2:after {background-position:-138.3333rem; }
+.cus-level-list .level-img.level3:after {background-position:0; }
+.cus-level-list .level-img.level4:after {background-position:-415rem; }*/
+
+.cus-level-list .level-img { width: 0.706667rem; height: 0.706667rem; display: inline-block; margin-bottom: 0.133333rem; background: none; position: relative; overflow: hidden;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center center;
+}
+.cus-level-list .level-img.active.level1 {background-image:url(../../images/user/grade_icon_numBjOn.png); }
+.cus-level-list .level-img.active.level2 {background-image:url(../../images/user/grade_icon_numHjOn.png); }
+.cus-level-list .level-img.active.level3 {background-image:url(../../images/user/grade_icon_numPtOn.png); }
+.cus-level-list .level-img.active.level4 {background-image:url(../../images/user/grade_icon_numZsOn.png); }
+
+.cus-level-list .level-img.level1 {background-image:url(../../images/user/grade_icon_numBjOff.png); }
+.cus-level-list .level-img.level2 {background-image:url(../../images/user/grade_icon_numHjOff.png);}
+.cus-level-list .level-img.level3 {background-image:url(../../images/user/grade_icon_numPtOff.png); }
+.cus-level-list .level-img.level4 {background-image:url(../../images/user/grade_icon_numZsOff.png); }
+
+.cus-level-list .level-name {font-size: 0.32rem; color:#8C837C;}
+.cus-level-main { margin-top: 1.2rem; margin-bottom: 0.466667rem; color:#fff; font-size: 0.4rem;font-weight: 500; }
+.cus-level-mainimg {color:#DBA959; font-size: 1.093333rem; margin-bottom: 0.133333rem; height: 1.093333rem; line-height: 1;}
+.cus-level-mainval {color:#fff; font-size: 0.466667rem;}
+
+.cus-level-other { text-align: center; }
+.cus-level-otit {font-size: 0.4rem; margin-top: 0.866667rem; margin-bottom: 0.666667rem}
+
+.cus-level-other .level-name {font-size: 0.32rem;}
+.cus-level-other .level-img {font-size: 1.093333rem; line-height: 1; height: 82px; color:#C4C4C4; margin:0.266667rem 0;}
+.cus-level-other .level-value {font-size: 0.346667rem; font-family: arial;}
+
+.dvd-line {width: 9.2rem; height: 1px; font-size: 0;line-height: 0; background:#EFEFF4; margin:0.8rem auto;}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<link rel="shortcut icon" href="https://qncdn.qiakr.com/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<link rel="dns-prefetch" href="//static.qiakr.com/">
+<meta name="apple-mobile-web-app-capable" content="yes" >
+<meta name='apple-touch-fullscreen' content='yes'>
+<meta name="full-screen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" >
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<script type="text/javascript">
+// 屏幕适配
+  (function(f,e){var g=f.documentElement,c="orientationchange" in window?"orientationchange":"resize",d=function(){var j=g.clientWidth||320;var h=g.classList;var i=j<320?320:j>750?750:j;g.style.fontSize=(i/10)+"px";g.style.opacity=1;if(j<375){h.add("view-sm");h.remove("view-md")}else{h.remove("view-sm");h.add("view-md")}};g.style.opacity=0;e.addEventListener(c,d,false);f.addEventListener("DOMContentLoaded",d,false);if(/iP(hone|od|ad)/.test(navigator.userAgent)){var b=(navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),a=parseInt(b[1],10);if(a>=8){document.documentElement.classList.add("hairlines")}}})(document,window);
+</script>
+<link href="/css/user/style.css?v=4.0.0" rel="stylesheet" type="text/css">
+<script src="//res.qiakr.com/plugins/mall/qk.mall.min.js"></script>

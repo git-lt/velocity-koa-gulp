@@ -1,0 +1,59 @@
+body {background-color: #fff}
+.hide{display:none;}
+.overFh{overflow: hidden;}
+.topWrap {
+   display:-webkit-box;display:box;
+   height: 44px; 
+}
+.return {
+    display:-webkit-box;display:box;line-height: 44px;
+    width:50px;padding-left: 5px;
+    color: #0076FF;font-weight: bold;
+}
+.title {
+   display:-webkit-box;display:box;
+   text-align:center;
+   -webkit-box-orient:vertical;box-orient:vertical;
+   -webkit-box-flex:1;box-flex:1;
+   -webkit-box-pack:center;box-pack:center;
+   color:#030303;font-size: 15px;font-weight: bold;      
+}
+.date {font-size: 11px;font-weight: normal;}
+.right {display:-webkit-box;display:box;width: 50px;}
+.return,.title,.right {border-bottom: 1px solid #ccc;}
+.do-navbar-container {width: 100%;border-bottom: 1px solid #ccc; }
+.do-navbar {
+    display:-webkit-box;display:box;
+    margin:7px 16px;
+    border: 1px solid #0076FF;border-radius: 3px;
+    font-size: .13rem;
+}
+.time_navbar {
+    -webkit-box-flex:1;box-flex:1;
+    padding: 5px 0;text-align: center;width: 1%;
+    border-right: 1px solid #0076FF;color: #0076FF;
+}
+.time_navbar_on {color: #fff;background-color: #0076FF;}
+.data {border-bottom: 1px solid #ccc;padding:0.1rem 0;}
+.row {display:-webkit-box;display:box;padding: 10px 0;}
+.rowData {
+    -webkit-box-flex:1;box-flex:1;width: 1%;position: relative;
+    text-align: center;
+}
+.rowData:after{    
+    content: " ";
+    position: absolute;right: 0;top: 7px;   
+    background-color:#ccc;height:38px;
+    border-right: 1px solid #ccc;
+  }
+.rowData:nth-child(3):after {content:none;}
+.rowDatan:after{content: none}
+.dataBot {font-size: 0.12rem;color: #4A4A4A}
+.dataValue {font-size: 0.24rem;text-overflow: ellipsis;overflow: hidden;white-space: nowrap;outline: 0 !important;}
+.do_charts{padding: 4px;}
+#chart1,#chart2,#chart3,#chart4 {height: 2.1rem;width: 100%;margin-bottom: 4px;border-radius: 0.025rem;-webkit-border-radius: 0.025rem;}
+.skip {display:-webkit-box;display:box;margin-top: 20px;border-top: 1px solid #ccc}
+.skipIcon {-webkit-box-flex:1;box-flex:1;text-align: center;padding: 5px 20px;}
+.productOrder,.salesOrder {margin:0 5px 5px 5px;padding: 10px;border: 1px solid #ccc;border-radius: 3px}
+.iconR {float: right;}
+.iconOn {color: #0076FF!important;}

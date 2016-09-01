@@ -1,0 +1,628 @@
+/**
+ * Framework7 1.3.5 - Custom Build
+ * Full Featured Mobile HTML Framework For Building iOS & Android Apps
+ * 
+ * iOS Theme
+ *
+ * 
+ * Included modules: messages
+ * 
+ * http://www.idangero.us/framework7
+ * 
+ * Copyright 2015, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ * 
+ * Licensed under MIT
+ * 
+ * Released on: December 23, 2015
+ */
+html,
+body {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+body {
+  font-family: -apple-system, SF UI Text, Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-size: 14px;
+  line-height: 1.4;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
+  background: #fff;
+  overflow: hidden;
+}
+@media all and (width: 1024px) and (height: 691px) and (orientation: landscape) {
+  html,
+  body {
+    height: 671px;
+  }
+}
+@media all and (width: 1024px) and (height: 692px) and (orientation: landscape) {
+  html,
+  body {
+    height: 672px;
+  }
+}
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+}
+a,
+input,
+textarea,
+select {
+  outline: 0;
+}
+a {
+  text-decoration: none;
+  color: #007aff;
+}
+p {
+  margin: 0;
+}
+
+/* === Views === */
+.views,
+.view {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+}
+.views {
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.view {
+  overflow: hidden;
+  box-sizing: border-box;
+}
+/* === Pages === */
+.pages {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+}
+.page {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #efeff4;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+.page.cached {
+  display: none;
+}
+.page-on-left {
+  opacity: 0.9;
+  -webkit-transform: translate3d(-20%, 0, 0);
+  transform: translate3d(-20%, 0, 0);
+}
+.page-on-center .swipeback-page-shadow {
+  opacity: 1;
+}
+.page-on-right {
+  -webkit-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.page-on-right .swipeback-page-shadow {
+  opacity: 0;
+}
+.page-content {
+  overflow: hidden;
+  
+  box-sizing: border-box;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.swipeback-page-shadow {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 16px;
+  height: 100%;
+  background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.2) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.2) 100%);
+  z-index: -1;
+  content: '';
+}
+html.android .swipeback-page-shadow {
+  display: none;
+  -webkit-animation: none;
+  animation: none;
+}
+
+/* === Toolbars === */
+.toolbar-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  padding: 0 8px;
+  box-sizing: border-box;
+  padding-top: 6px;
+}
+.navbar-inner.cached {
+  display: none;
+}
+
+.toolbar {
+  height: 44px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 17px;
+  position: relative;
+  margin: 0;
+  z-index: 500;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  left: 0;
+  bottom: 0;
+}
+.toolbar b {
+  font-weight: 500;
+}
+
+html.ios-gt-8 .toolbar b {
+  font-weight: 600;
+}
+
+.toolbar {
+  background: #f7f7f8;
+}
+.toolbar a.link {
+  color: #f44336;
+  font-weight: 700;
+  line-height: 36px;
+  height: 36px;
+  text-decoration: none;
+  position: relative;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -webkit-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+html:not(.watch-active-state) .toolbar a.link:active,
+.toolbar a.link.active-state{
+  opacity: 0.3;
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+}
+
+.toolbar:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: auto;
+  right: auto;
+  height: 1px;
+  width: 100%;
+  background-color: #c4c4c4;
+  display: block;
+  z-index: 15;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+}
+html.pixel-ratio-2 .toolbar:before {
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+html.pixel-ratio-3 .toolbar:before {
+  -webkit-transform: scaleY(0.33);
+  transform: scaleY(0.33);
+}
+.toolbar.no-border:before {
+  display: none;
+}
+.toolbar a {
+  -webkit-flex-shrink: 1;
+  -ms-flex: 0 1 auto;
+  flex-shrink: 1;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/* === Relation between toolbar/navbar types and pages === */
+.page > .toolbar {
+  position: fixed;
+}
+
+.toolbar-through .page-content,
+.toolbar-fixed .page-content,
+.tabbar-through .page-content,
+.tabbar-fixed .page-content {
+  padding-bottom: 44px;
+}
+.tabbar-labels-fixed .page-content,
+.tabbar-labels-through .page-content {
+  padding-bottom: 50px;
+}
+@media all and (min-width: 768px) {
+  .tabbar-labels-fixed .page-content,
+  .tabbar-labels-through .page-content {
+    padding-bottom: 56px;
+  }
+}
+
+/* === Message Bar === */
+.messagebar {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+}
+.messagebar textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  border: 1px solid #c8c8cd;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: none;
+  display: block;
+  padding: 4px 8px;
+  margin: 0;
+  width: 100%;
+  color: #000;
+  font-size: 15px;
+  resize: none;
+  height: 32px;
+  line-height: 22px;
+  -webkit-box-flex:1;
+}
+.messagebar .link {
+  -ms-flex-item-align: flex-end;
+  -webkit-align-self: flex-end;
+  align-self: flex-end;
+}
+.messagebar .link.icon-only:first-child {
+  margin-left: -6px;
+}
+.messagebar .link:not(.icon-only) + textarea {
+  margin-left: 8px;
+}
+.messagebar textarea + .link {
+  margin-left: 8px;
+}
+.messagebar .link {
+  -webkit-flex-shrink: 0;
+  -ms-flex: 0 0 auto;
+  flex-shrink: 0;
+}
+.messagebar ~ .page-content {
+  padding-bottom: 46px;
+}
+.hidden-toolbar .messagebar {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition-duration: 0ms;
+  transition-duration: 0ms;
+}
+/* === Messages === */
+.messages{
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+.messages-content {
+  background: #ebebeb;
+}
+
+.messages-date {
+  text-align: center;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1;
+  padding: 10px 0 5px;
+  width: 100%;
+  color: #8e8e93;
+  clear: both;
+}
+html.ios-gt-8 .messages-date {
+  font-weight: 600;
+}
+.messages-date span {
+  font-weight: 400;
+}
+.message {
+  box-sizing: border-box;
+  margin: 0 10px 2px;
+  max-width: 85%;
+  clear: both;
+  position: relative;
+}
+.message .status{position: absolute;left: -25px;top: 9px;width: 16px;height: 16px;}
+.message:first-child {
+  margin-top: 10px;
+}
+.message .message-text {
+  box-sizing: border-box;
+  border-radius: 10px 10px 0 10px;
+  padding: 8px 10px;
+  min-width: 48px;
+  min-height: 35px;
+  font-size: 15px;
+  line-height: 20px;
+  word-break: break-all;
+  position: relative;
+}
+.message .talkPoint{
+  position: absolute;right: -8px;bottom: -6px;
+  font-size: 20px;color: #00d449;
+  -webkit-transform:rotateY(180deg);
+}
+.message.message-received .talkPoint{
+  color: #fff;
+  right: initial;
+  left: -6px;
+  -webkit-transform:rotateY(0deg);
+}
+.message.message-pic .message-text {
+  padding: 0;
+  background: none;
+}
+.message.message-pic img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+  border-radius: 16px;
+}
+.message-name {
+  font-size: 12px;
+  line-height: 1;
+  color: #8e8e93;
+  margin-bottom: 2px;
+  margin-top: 7px;
+}
+.message-hide-name .message-name {
+  display: none;
+}
+.message-label {
+  font-size: 12px;
+  line-height: 1;
+  color: #8e8e93;
+  margin-top: 4px;
+}
+.message-hide-label .message-label {
+  display: none;
+}
+.message-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 100%;
+  margin-top: -32px;
+  position: relative;
+  top: 0;
+  background-size: cover;
+  opacity: 1;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+}
+.message-hide-avatar .message-avatar {
+  opacity: 0;
+}
+.message-sent {
+  float: right;
+}
+.message-sent .message-avatar{
+  float: right;
+}
+.message-sent .message-name {
+  margin-right: 16px;
+}
+.message-sent .message-label {
+  margin-right: 6px;
+}
+.message-sent.message-with-avatar .message-text {
+  margin-right: 40px;
+}
+.message-sent .message-text {
+  background-color: #00d449;
+  color: #fff;
+}
+.message-sent.message-last .message-text,
+.message-sent.message-with-tail .message-text {
+  border-radius: 10px;
+  background: #00d449;
+}
+
+.message-received {
+  float: left;
+}
+.message-received .message-text {
+  background-color: #fff;
+  color: #000;
+  border-radius: 10px 10px 10px 0;
+}
+.message-received .message-name {
+  margin-left: 16px;
+}
+.message-received .message-label {
+  margin-left: 6px;
+}
+.message-received.message-with-avatar .message-text {
+  margin-left: 40px;
+}
+.message-received.message-last .message-text,
+.message-received.message-with-tail .message-text {
+  border-radius: 10px;
+}
+
+.message-last {
+  margin-bottom: 8px;
+}
+.message-appear-from-bottom {
+  -webkit-animation: messageAppearFromBottom 400ms;
+  animation: messageAppearFromBottom 400ms;
+}
+.message-appear-from-top {
+  -webkit-animation: messageAppearFromTop 400ms;
+  animation: messageAppearFromTop 400ms;
+}
+.messages-auto-layout .message-name,
+.messages-auto-layout .message-label {
+  display: none;
+}
+.messages-auto-layout .message-avatar {
+  opacity: 0;
+}
+.messages-auto-layout .message-first .message-name {
+  display: block;
+}
+.messages-auto-layout .message-last .message-avatar {
+  opacity: 1;
+}
+.messages-auto-layout .message-last .message-label {
+  display: block;
+}
+html.retina.ios-6 .message,
+html.retina.ios-6 .message.message-pic img {
+  -webkit-mask-box-image: none;
+  border-radius: 16px;
+}
+@-webkit-keyframes messageAppearFromBottom {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes messageAppearFromBottom {
+  from {
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes messageAppearFromTop {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes messageAppearFromTop {
+  from {
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+/* === Disabled elements === */
+.disabled,
+[disabled] {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.disabled .disabled,
+.disabled [disabled],
+[disabled] .disabled,
+[disabled] [disabled] {
+  opacity: 1;
+}
+.historyTip{text-align: center;margin: 10px 0;}
+    .historyTip span{color: #fff;padding: 2px 10px;display: inline-block; background: #D6D5D5; border-radius: 7px;}
+    .face-box {border-top: #c3c3c5 1px solid; height: 130px; padding: 10px 0 0; position: relative; background: #fafafa; display: none; transition: all 1s linear; -webkit-transition: all 1s linear; margin-top: 44px;}
+    .facePage-wrap {z-index: 1; position: absolute; left: 0; top: 0; width: 100%; height: 130px; -webkit-transition: all .5s linear; -webkit-transform: translateX(0px); transition: all .5s linear; transform: translateX(0px); -webkit-backface-visibility: hidden; overflow: hidden; }
+    .facePage-thumbs {position: absolute; bottom: 3px; left: 0; width: 100%; text-align: center; }
+    .facePage-wrap .facePage {width: 100%; height: 125px; float: left; }
+    .face-list {padding: 0; margin: 0 auto; text-align: center; width: 320px; }
+    .face-list li {display: inline-block; padding: 8px 7px; }
+    .face-list li img {width: 22px; height: 22px; }
+    .facePage-thumbs span {display: inline-block; width: 6px; height: 6px; background-color: #bbb; margin: 0 5px; border-radius: 3px; -webkit-border-radius: 3px; }
+    .facePage-thumbs span.cur {background-color: #666; }
+    .btn {display: inline-block; vertical-align: middle; border: 0; }
+    .btn-face{width: 40px; height: 28px;margin-right: 5px;}
+    .btn-face .icon {display: inline-block; vertical-align: middle; background: url(https://qncdn.qiakr.com/webim/icon.png) no-repeat; background-size: 125px auto; width: 28px; height: 28px; }
+    .btn-face .icon-face {background-position: -33px 0; }
+    .btn-face.selected .icon-face {background-position: -97.2px 0; }
+    .sendStockTip{padding: 6px;text-align: center;background: #fff;border-radius: 8px;clear: both;content: '';margin: 10px 20px;}
+    .sendStockTip .send{width: 140px;margin: 0 auto;text-align: center;padding: 5px;border: solid 1px #40c649;margin-top: 5px;color: #40c649;border-radius: 4px;background: #fff;line-height: 22px;}
+    .stockInfo{display: block;}
+    .message-sent .stockInfo{color: #fff;}
+    .stockInfo .name{font-size: 14px;height: 80px;overflow: hidden;}
+    .stockInfo .price{color: #ff3b30;}
+    .stockInfo .stockImg{width: 100px;height: 100px;display: block;margin-right: 10px;}
+    .wbox {display: -webkit-box; }
+    .wbox-1 {-webkit-box-flex: 1; display: block; }
+    .ub-ac{-webkit-box-align:center;box-align:center;}
+    .ub-pc{-webkit-box-pack:center;box-pack:center;}
+    .audio img{height: 25px;}
+    .audio .aTime{padding-left: 5px;}
+    a.coupon{display: block;}
+    .coupon .couponMsg{color: #fff;position: relative;padding: 8px 35px 8px 8px;}
+    .coupon .couponMsg .couponIcon{position: absolute;right: 10px;top: 10px;background: none;border: solid 1px #fff;border-radius: 50%;
+        display: block;width: 20px;height: 20px;text-align: center;font-size: 14px;line-height: 20px;}
+    .coupon .couponMsg .value{font-size: 18px;}
+    .coupon .couponMsg .name{font-size: 14px;}
+    .coupon .time{color: #666;font-size: 12px;padding: 5px 8px;background: #fff;}
+    .message-text .face{width: 22px;}
+
+    .imageView{position: fixed;left: 0;top: 0;z-index: 9999;width: 100%;height: 100%;background: rgba(0,0,0,0.8);display: -webkit-box;-webkit-box-align: center;-webkit-box-pack: center;}
+    .imageView img{max-width: 100%;max-height: 100%;}
+                    
+    @font-face {
+      font-family: 'iconfont';
+      src: url('//at.alicdn.com/t/font_1462946947_191156.ttf') format('truetype'); 
+    }
+              
+    .iconfont{font-family:"iconfont" !important;font-style:normal;display:inline-block;-webkit-font-smoothing:antialiased;-webkit-text-stroke-width:.2px;-moz-osx-font-smoothing:grayscale; line-height: normal;}
+    .bdrbox { -webkit-box-sizing:border-box; box-sizing:border-box;}
+    .store-info {padding-left: 10px;}
+    .launch_answer{display:block;padding:6px 10px;background-color: #f44335;color: #fff;border-radius: 20px;-webkit-border-radius: 20px;box-shadow:inset 0 1px 0 #fe8585,0 1px 0 rgba(0,0,0,.2);}
+    .ell { text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+    /*头部信息*/
+    img.size40{width: 40px;height: 40px;}
+    img.round{border-radius: 50%;}
+    .salesInfo {overflow: hidden; height: 0;-webkit-transform:translateZ(0,0,0); position: fixed;top:0;left: 0;width: 100%; z-index: 3000000;background: #fff;line-height: 20px;}
+    .sales-info {padding: 10px 15px; height: 60px; border-bottom:1px solid #ddd;}
+    .salesInfo .sales {overflow: hidden; }
+    .salesInfo .sales span {float: left; font-size: 16px;}
+    .salesInfo .store {display: block; color: #999;font-size:14px;}
+    .chat-menus {height: 40px; border-bottom:1px solid #ddd;}
+    .chat-menus a {color:#525252; font-size: 14px; position: relative; z-index: 10; line-height: 40px;  display: block; text-align: center;}
+    .chat-menus a.inStore:after,.chat-menus a.changeSales:after { content: ''; display: block; position: absolute; height: 10px; width: 1px; background-color: #ddd; right:0; top:40%;}
+    .chat-menus .iconfont {font-size:18px;}
+    .c-gr {color:#40c649;}
+    .newMsg .iconfont {position: relative; z-index: 10;}
+    .newMsg.ac .iconfont:after{content:''; position:absolute;  display: block; width: 6px; height: 6px; border-radius: 50%; background-color: red; top:0; right:0;}
+    .msgImage{display: block;}
+    .onLineSatus { font-size: 14px;display: block;width:8px;height:8px;background-color: #ccc;border-radius: 50%;margin-left: 2px; }
+    .onLineSatus.online {background-color: #09bb07;}
+    #infoExpand {position: absolute; right:0; top:10px; z-index: 2; background-color: #40c649; color:#fff; line-height: 26px; border-radius: 13px 0 0 13px; padding: 0 10px; }
+    
+    /*1px border*/
+    .hairlines .chat-menus {border-width: .5px;}
+    .sales-name-box {max-width: 9em;}
+
+    .message-text .audio{max-width: 200px;min-width: 50px;}
+    .message-text .audio .aTime{float: right;margin-top: 4px;}

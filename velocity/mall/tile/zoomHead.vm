@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name='apple-touch-fullscreen' content='yes'>
+<meta name="full-screen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+<meta name="format-detection" content="telephone=no"/>
+<meta name="format-detection" content="address=no"/>
+#set($vertion = '2.2.4')
+<script>
+var _hmt = _hmt || [];
+(function(doc, win) {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0ae38da02c36d427b45394d1982689c8";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+
+// 移动端REM自适应
+  var docEl = doc.documentElement, 
+		dpr = Math.floor(window.devicePixelRatio),
+  		vp = document.querySelector('[name="viewport"]'),
+      	resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+      	recalc = function () {
+          var clientWidth=docEl.clientWidth||320;
+          var width=(clientWidth<=320)?320:((clientWidth>=640)?640:clientWidth);
+          if (!clientWidth) return;
+          docEl.style.fontSize = 100 * (width / 320) + 'px';
+          docEl.style.opacity=1;
+      	};
+  docEl.style.opacity=0;
+  win.addEventListener(resizeEvt, recalc, false);
+  doc.addEventListener('DOMContentLoaded', recalc, false);
+
+})(document, window);
+
+</script>
+<link href="../css/user/style.css?v=$vertion" rel="stylesheet" type="text/css">
+<script src="//res.qiakr.com/plugins/mall/qiakrMall.min.js"></script>
+<script src="../js/mall/base.js?v=$vertion"></script>

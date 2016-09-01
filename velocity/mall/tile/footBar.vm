@@ -1,0 +1,43 @@
+<footer class="store_footer" id="storeFooter" >
+  <ul class="wbox">
+    <li class="wbox-1"><a href="contactSales.htm?storeId=$!footStoreId&salesId=$!footSalesId&supplierId=$!footSuid" data-suid="$!footSuid" class="linkNeedLogin" id="goChat"><span class="newIcon"></span>联系服务顾问</a></li>
+    <li>|</li>
+    <li class="wbox-1"><a href="storeAllList.htm?supplierId=$!footSuid">所有门店</a></li>
+    <li>|</li>
+    <li class="wbox-1"><a href="../customer.htm?suid=$!footSuid&storeId=$!footStoreId&salesId=$!footSalesId" data-suid="$!footSuid" class="linkNeedLogin">个人中心</a></li>
+  </ul>
+</footer>
+<!-- 联系服务顾问 弹窗 start -->
+<section class="chat_cover">
+  <em class="chat_close"></em>
+  <p class="chat_tit">请选择你需要咨询的方向</p>
+  <a class="ub ub-ac chatJumpEvt chat_before_con" href="contactSales.htm?storeId=$!footStoreId&salesId=$!footSalesId&supplierId=$!footSuid">
+    <div class="ub-img-bg chat_img_before"></div>
+    <div class="ub-f1">
+      <h3>售前咨询</h3>
+      <p>咨询商品相关</p>
+    </div>
+  </a>
+  <a class="ub ub-ac chatJumpEvt chat_after_con" href="getOrderListOfCustomerRecently.htm">
+    <div class="ub-img-bg chat_img_after"></div>
+    <div class="ub-f1">
+      <h3>售后服务</h3>
+      <p>咨询订单相关</p>
+    </div>
+  </a>
+</section>
+<div class="chat_mask"></div>
+<script>
+	(function loadChatCover(){
+		$("#goChat").on("click", function(e){
+			if(sessionStorage.isLogin == "false" && getUrlParam("type")!="preview")
+		      	return;
+			e.preventDefault();
+			$(".chat_cover, .chat_mask").addClass("active");
+		});
+		$(".chat_close").on("click", function(){
+			$(".chat_cover, .chat_mask").removeClass("active");
+		});
+	})();
+</script>
+<!-- 联系服务顾问 弹窗 end -->

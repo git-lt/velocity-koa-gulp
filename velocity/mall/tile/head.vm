@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<link rel="shortcut icon" href="https://qncdn.qiakr.com/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<link rel="dns-prefetch" href="//static.qiakr.com/">
+<meta name="apple-mobile-web-app-capable" content="yes" >
+<meta name='apple-touch-fullscreen' content='yes'>
+<meta name="full-screen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" >
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+#set($vertion = '4.0.0')
+<link href="../css/user/weui.css?v=$vertion" rel="stylesheet" type="text/css">
+<link href="../css/user/style.css?v=$vertion" rel="stylesheet" type="text/css">
+<script src="//res.qiakr.com/plugins/mall/qk.mall.min.js"></script>
+<script src="//res.qiakr.com/plugins/require/require-2.1.18.min.js"></script>
+<script src="../js/mall/base.js?v=$vertion"></script>
+
+<script>
+  require.config({ urlArgs: "v=1.1.2" });
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0ae38da02c36d427b45394d1982689c8";
+  var s = document.getElementsByTagName("script")[0]; 
+  // s.parentNode.insertBefore(hm, s);
+  (function(doc, win) {
+    // 移动端REM自适应
+    var docEl = doc.documentElement, 
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+        recalc = function () {
+          var clientWidth=docEl.clientWidth||320;
+          var docCls = docEl.classList;
+          var width = clientWidth < 320 ? 320 : clientWidth > 640 ? 640 : clientWidth;
+          docEl.style.fontSize = 100 * (width / 320) + 'px';
+          docEl.style.opacity=1;
+
+          // 添加屏幕标识，便于文字调整
+          if(375 <= clientWidth && clientWidth < 414){
+            docCls.add('view6');
+          }else if(414 <= clientWidth){
+            docCls.add('view6s');
+          }else{
+            docCls.remove('view6');
+            docCls.remove('view6s');
+          }
+        };
+    docEl.style.opacity=0;
+    win.addEventListener(resizeEvt, recalc, false);
+    doc.addEventListener('DOMContentLoaded', recalc, false);
+    // IOS8下1px线条改为0.5px
+    if (/iP(hone|od|ad)/.test(navigator.userAgent)) {
+        var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),
+            version = parseInt(v[1], 10);
+        if(version >= 8){
+            document.documentElement.classList.add('hairlines');
+        }
+    }
+    })(document, window);
+</script>

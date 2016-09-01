@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<link rel="shortcut icon" href="https://qncdn.qiakr.com/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no"  >
+<meta name="apple-mobile-web-app-capable" content="yes" >
+<meta name='apple-touch-fullscreen' content='yes'>
+<meta name="full-screen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black" >
+<style>
+	.error{padding-left: 90px;height: 96px;line-height: 96px;font-size: 16px;background: url("https://qncdn.qiakr.com/mall/seckillBackIcon2.png") left center no-repeat;width: 120px;margin: 40% auto 0;}
+</style>
+</head>
+<body>
+	<div class="error">抱歉，系统繁忙</div>
+</body>
+</html>

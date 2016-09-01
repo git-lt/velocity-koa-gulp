@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<link rel="shortcut icon" href="https://qncdn.qiakr.com/favicon.ico">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, user-scalable=no">
+<link rel="dns-prefetch" href="//static.qiakr.com/">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-touch-fullscreen" content="yes">
+<meta name="full-screen" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="address=no">
+<script type="text/javascript">
+  (function(f,e){var g=f.documentElement,c="orientationchange" in window?"orientationchange":"resize",d=function(){var j=g.clientWidth||320;var h=g.classList;var i=j<320?320:j>750?750:j;g.style.fontSize=(i/10)+"px";g.style.opacity=1;if(j<375){h.add("view-sm");h.remove("view-md")}else{h.remove("view-sm");h.add("view-md")}};g.style.opacity=0;e.addEventListener(c,d,false);f.addEventListener("DOMContentLoaded",d,false);if(/iP(hone|od|ad)/.test(navigator.userAgent)){var b=(navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/),a=parseInt(b[1],10);if(a>=8){document.documentElement.classList.add("hairlines")}}})(document,window);
+</script>
+<link href="/css/user/style.css?v=4.0.0" rel="stylesheet" type="text/css">
+<script src="//res.qiakr.com/plugins/mall/qk.mall.min.js"></script>
+
+<!-- 内嵌的css -->
+
+<style media="screen" build="">
+  body {background: #fff;}
+  .d1 {height: 100px;}
+
+
+  html,body { min-width: 320px;/*no*/ max-width: 750px;/*no*/  margin:0 auto; min-height: 100%;}
+  body {padding-bottom:45px; background-color: #fff;
+  background: url(//qncdn.qiakr.com/wx/ajax-loader.gif) no-repeat center center;
+  }
+  * {-webkit-box-sizing: border-box;box-sizing: border-box;}
+
+  main {padding-bottom: 100px;}
+  .h-view,.v-view { display: -webkit-box; display: -webkit-flex; display: flex;}
+  .h-view { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -webkit-flex-direction: row; flex-direction: row; }
+  .v-view { -webkit-box-orient: vertical; -webkit-box-direction: normal; -webkit-flex-direction: column; flex-direction: column; }
+
+  .cus-level-base {text-align: center; padding: 45px; height: 700px; background: #2F2A27 url(//qncdn.qiakr.com/wx/gradeBg@2x.png) no-repeat center center; background-size: cover; }
+  .cus-avatar {position: relative; width: 92px; height: 92px; border:2px solid #fff;/*no*/ background-color:#fff; border-radius: 50%; display: inline-block; background-size: cover; background-repeat: no-repeat;}
+  .cus-curr-level {
+    position: relative;;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #fff;
+    top: 65px;
+    left: 50%;
+    margin-left: -18px;
+    margin-bottom: -18px;
+  }
+  .cus-curr-level:after{
+    content: ''; display: block; width: 100%; height: 100%;
+    position: absolute; left: 0; top: 0;
+    background-size:cover;
+  }
+
+  .cus-curr-level.level1:after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAnFBMVEUAAAD//////vz////////////////048j////+/Pn9+fT58OP////26dT////////////////////////////////////v2LPz4cTv17Hy38D////15cvbqVngtXH////58eXesWndr2TiunvjvH/huHX68+ncrF/47t/bq1zlwon47+HiunroyZfmxI7fs2v37dzw3Lzr0qnqzqGRx2xDAAAAHXRSTlMAvvr63owk9fn39fPy8eziqpVmNi8rE/32+fZF9cNukuoAAAJkSURBVEjHpZbpkqIwFIXZFPe9Fe0OpwHptIi4vf+7Da2RS7jATE2fKv6k8pHk7kaNuou56Ux6vYljzhdd4x+06kyhadpZ/QVZmgCs8e20T+M43Z9uYwuAuWxBujOg755iv6T45PaBWeMtOzasDRHEbSzYnVpkbcL2Ir9We8+GuebMm4NB4jcqGcB5qzLvIwwjv0XBEKP3yjkjfMRtzFlIFyPtrLWDj+rrs6z8l1AI4cIpv8vEMNaRK3JdaVHmkBzCJKaDgf6e6Agcf75iWfwoGKBT+NS2E535xFe+knzhM6Lb5Upt++XlGTzG7B/uKaiDeGqHmYo3WFEtQ1QglAILS2WFTT1DlBQvbZ+2WKEfc0ajzqKQ7GP1MJ3LGZ0KBMl7GHCKE2d06jskKMM0tzesuJ6hxTIlLXSNBcaM0SUDjRpjYcxxa2fy7Rp1x9wwiyfFxzomt9yTevk3gWk4eG28MoZiIac2CvLhGBOk6iAgaWByxbCUh0NMjB6U8TIcaxmlCyLx0AE9BnGGQ+x6nOHXazQEhTY3RLPJJSHM5A3OPdPVuHMbwigUJfEw4gGrEGJ4wPLU8AVj9NSoJuHZP1LOEVNNQkr3cyjz14ffBUUMS3fDxFZKMpaiGEOFRZWwYhNRjKESporlTnBKZ6hYUllOGRULEZcZKsvUAIIqhcsFGkMNgFqNFGUdNhZgbcqxRK2GmpordMkokvoKNTVqn64UbVLtkzXqoI1RjZqPBGkzkxYjARs+dkHDMTsaPmrGnK3kiNzSmNMwUHmZ1IjMo4GqdXS7J354OIR+cqfR7bdD4n+No38AvqT1NWiWz5UAAAAASUVORK5CYII=);
+  }
+
+  .cus-curr-level.level2:after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAz1BMVEUAAAD//////////vz////////15Mn+/Pn9+fT////26dT////////////////////////////////////////////////58OLv17Hy38Dy4sb////w2bbz4cT58OPbqVngtXH////cq13huHffsmr+/fzs06ru17Lpy5vdrWH8+fPlwYfdr2Xr0KXox5TftG/47+Hv2bXoyZjiunrmw4z37t7y4MTqzqH9+/jnxpHjvH358eX26dXkvoL79u769ez37Nv05c3x3b369OrqzaDGZqy8AAAAH3RSTlMAvvr6jCT19/Xy8ezi3t2qlWY2LysTBPP59vRF+fbz77iU1gAAAwBJREFUSMellul2okAQhUWN+5rEqNm6L8gioCKuMa5J3v+ZBglYLaDOmbn/Oicft73d1VWpBN01G1K1nE6Xq1KjeZf6Cz1kKzhTJftwA7mXAGRK2nAzUfhkM9RKGQDS/RXkrg7kc67CBSlGLg/UL+3yKZtG5pUI4l4zSGefkpiWBPVtxRO1elMhteLMYw2FKb8oq4DaY5R5KeKdbBLUa6P4EvEpIqdcZZicQ/HMq1VDjkdkGOLKZozlUGsJuUl4j/k4jriSPUhuQ6IMsyisYkaAYDViR/UKyJ7ONK3Gc3MAR9ydr4maDk+5jrcY48I04Yq789VFPbhvyMTDnkHXMaPsAvUy+L2HEl5jzBCmopgYBss+C9WB5NcC8kqSEeeeFRkF6ufx4EeXSzTi/GQlM9KzH2AFbgzaY8w9jbEPjEhTVLy8kRF3t3G1+frbN/KtvtdzzRoJkJzBXaqJUlA12tf6W4Uv1TPyrcL152FsBGmU0Ew1oAUmOjxt93PdsE7eimV439rC0yCwWqDhBT7kROmcJCQ3IIZZXuhVbHgoLU6N5F/mh4XiqKbKmHCRGicyBiVho5xKQwxvoIYUMRpUV4wPaQ/iohYqvs4ZHeqQnUPB9kg/PkXMGOoHEcH2giBIA5jijTMR+lAQFDlV0l682WtYBASR0+HSac2PNuElHdMJ0eEG14h0gMZHVEAG5gQE1yi8sCQHH/YxpMXCN1thRkB4YVMVGGfQEkcbdwfs3GPVYckipREtwpGtYMfYxyfgOMCnl/YOnEWKkMp91LP7/pcO1sz/dx+dWQdMWazcvdA7snyqaA1LYGsEKWzhLTUB6kAKnzChoOeAOTh9Qh6YoPiEJyxVR5f+7Cy1PhPU15YOrbqo07M8YaF0m0Vk68wTPcvUAHrshqgBUKtpyzcRajXU1G5D1NSofd7wovYpNur21d9FjToyEkwuMxMaCaLDR7d3waZLw0fCmNPpx5F+h8acCwPV8/QsEXn6TAPV1dFtYXFblm1uLWh0+98h8Z/G0T/xqA1EYeDIggAAAABJRU5ErkJggg==);
+  }
+
+  .cus-curr-level.level3:after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAwFBMVEUAAAD///7////////////05Mn////+/Pn9+fT58OP////26dT////////////////////////////////////////////w2bb////v17Hy38Dy4sb////z4cT15cvbqVngtXH////crF/iu3vhuHffs23dr2XesWn+/PvpyprlwYf05Mzmw4vht3Tx38Hw3L3kvoL8+fX8+PL69Or37t7u17Ls0qnr0KTnyJT48OL269n16NXy4cbqzqHmxY/fsmsMNDbyAAAAH3RSTlMA+t6MJPW/9/Xz8vHs4ryqlWY2LysTBP2++fb0Rfb1VMBoVAAAArlJREFUSMellul2okAQhWncd53EuGTpvo0ioALuJjHJ+7/VOBirwQYyZ+b+5JzvVHGruqqMFBV73bbZZKxptru9ovEXuiu0kFCrcPcD8qsMgDX2x9BaLifhcd9gAMq/cpBiB6iU3ImIaeKWKkAnK8uHAgMbKEJxAwZWeEhj+kOwZ0ukynpmGPZ15t5EdSEy5VVh3t8yT3XULJGjWQ31p5s4dbws85gvLkuoJ2L1TbyIXNmc8xLMfsy3MmrLfEieIVnDUHlYQNW69Wu32ezUxyn/o1kVBaopYze+fc4dnOXMPym7SBZj1yp38Jyo5f4VwLvrvgN43U8u2V00Rue738BiyXn+ClgHoTgrDNbAyvfEjH9rxnDpwzIGipkD2B7IleVhC2Au+VUjlKO3gMpExYFzuvm/xcmBIEhWcBdZVxIkHyeh6YQBJz1GBrbgKg9WWOhQiJXKb4HW2W8wld0eW52Z8je4Kj+GotFDQ5BecUhrhiO2nNRAz+hir2qK9TKt6+QaFkEf6BptHGN+BynJnbWDT5CHtmEipH5zEKYyfArHvkICptEEtcMO7xrzbdschytko2kw0G9s4GoM5bQh+8A0SGd0SEtPZ/T0so2g1taNyLacwuiWZxX3SxF6cdPbaGrHGa2NUhs2iXCtYfWnQVFIE+1pJB9hgIBrCrRHSM99+mVLLuAEk5s4QcpzN8oYSXmN7wN4O1I28vgGkN80WKIRFqujGKyA9W4a1XS3BlYDFUeNMKODcaIqbjS2PC8aZ+4lqhqWaixbPCHLv4xlX31XY1ktgBlPyj5sNoeY+doCMB6GqEn+g9SqUUut9COjlppan6X8WGp9Jhf1LI+5LmrtJLCyGYtOAu34GM8ywozp+Eg7c0ZSR+SIzpysg+pxIRPE4pEOqvzT7cMTtpS28D7odPvvI/GfztHfJigI1vyiY2MAAAAASUVORK5CYII=);
+  }
+
+  .cus-curr-level.level4:after {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAMAAADypuvZAAAAw1BMVEUAAAD//////vz////////////15Mn////+/Pnz4ML9+fT////26dT////////////////////////////////////////////v1rD58OLw2bby4sb////58OPbqVngtXH////crF7//v3esWndr2X++/niunnlwYfhuHbox5TmxI7fs2zs06riu3zcrWHrz6Py4cTgtnP8+fToyZn79+/69Ov05tDw3b3pzJ358ub37dz26tfkvoP58ePz48njvYH47+CedMFsAAAAHnRSTlMA+vrejCT1v/f29fLx7OK8qpVmNi8rE7778/z0RfOefGMnAAACt0lEQVRIx6WW6XaiQBCFWdx3zeKShL6ggOC+JUazvf9TjcMBbguKcybfP4RrV9+q7irlAvlOu6nXVbWuN9udvPIP3OcaOKORu78huSsC0GpT78NZrZxvb1rTABTvMiT5FlAqbMZCYrwplIDW1ShzKrQBFdQNNKi5i5LHLqzyTFxkVrbQfUxrHnRUXHEVtwL9Ial5ruJlJjIY9lF9TqxTRWGcpZkYZgHVs7UedRREJiPDMArQ5X0V8TLOFpknkdlHV/IalZnIxvjLsILY+bxqueJWdAGOpUZZbqEsxM3oAspohfUGTQ7OO9iQsA/eyW8jZKjhLnRhIMjGQgLLE3MjoodicBZQkpwb77B0hISzxE4YMfMS7gPr5BS94VOcs3rH1CBPgYENbKQSsy1fJPBgTyjy0Tj5DU2K7oilSLHEF0WmhrzSQY2v91jP0nYPbbhU1dBR2pjShS0f5Lwu8G7GogXaShOe5MJPShNs5xOLWOSiqej4EBFr+ClR+OE2FgnoSh1Mi219X66fEaxYNEJdUbESEa/4dC7W3BGvtA/qmWi2w5FP1Cyxnciis/DExxpfaU0Pa8eQwwuMIL4dVS9Lew8rSBONCC1nei0sREBU2b6FDSWB5WFyyRS2F6QnZGZH9crksoyY4bUrRnEwW7xREJURC5bG74bxrt9pNgs2OhpkMjriZx5+ccAh2huPRnQIqTDlv//iovIh5HE/CeaJjQywXskCHneliJ5psvRp2QL2N3/jxRJeYYyByVkuYfn8hVdYfFkaSTwbsD0+87LkteykXk/2+4n8zGuZDWBoZMMGENNF37wpYathU7stYlNj+7yxFtun3Kj7mftio06MBM51jcORIDV8DK8sw+Hj0pjTm6cl8x7HnCsD1ZN/5ojpP3GgyhzdFq4YmeZIuAuObr8dEv9rHP0DDeIA1PhLqy4AAAAASUVORK5CYII=);
+  }
+
+  .curr-customer-name { margin-top:15px;}
+
+
+  .cus-name {color:#fff; font-size: 30px; line-height: 1.5;}
+
+  .cus-level-list {margin-top: 40px;}
+
+  .cus-level-list .level-img { width: 53px; height: 53px; display: inline-block; margin-bottom: 10px; background: none; position: relative; overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  }
+  .cus-level-list .level-img:after{
+    content: ''; display: block; width: 10000%; height: 10000%;
+    position: absolute; left: 0; top: 0;
+    background-image: url(//qncdn.qiakr.com/wx/4479_a532_sprite.png?v=c36678b6); background-repeat: no-repeat;
+    background-size: 5200px 44400px!important;
+    -webkit-transform-origin: 0 0; -webkit-transform: scale(.01); transform-origin: 0 0; transform: scale(.01);
+  }
+
+  .cus-level-list .level-img.active.level1:after {background-position: -0px -0px; }
+  .cus-level-list .level-img.active.level2:after {background-position: -0px -5600px; }
+  .cus-level-list .level-img.active.level3:after {background-position: -0px -11200px; }
+  .cus-level-list .level-img.active.level4:after {background-position: -0px -16800px; }
+
+  .cus-level-list .level-img.level1:after {background-position: -0px -22400px; }
+  .cus-level-list .level-img.level2:after {background-position: -0px -28000px;}
+  .cus-level-list .level-img.level3:after {background-position: -0px -33600px; }
+  .cus-level-list .level-img.level4:after {background-position: -0px -39200px; }
+
+  .cus-level-list .level-name {font-size: 24px; color:#8C837C;}
+  .cus-level-main { margin-top: 90px; margin-bottom: 35px; color:#fff; font-size: 30px;font-weight: 500; }
+  .cus-level-mainimg {color:#DBA959; font-size: 82px; margin-bottom: 10px; height: 82px; line-height: 1;}
+  .cus-level-mainval {color:#fff; font-size: 35px;}
+
+  .cus-level-other { text-align: center; }
+  .cus-level-otit {font-size: 30px; margin-top: 65px; margin-bottom: 50px;}
+
+  .cus-level-other .level-name {font-size: 24px;}
+  .cus-level-other .level-img {font-size: 82px; line-height: 1; height: 82px; color:#C4C4C4; margin:20px 0;}
+  .cus-level-other .level-value {font-size: 26px; font-family: arial;}
+
+  .dvd-line {width: 690px; height: 1px; font-size: 0;line-height: 0; background:#EFEFF4; margin:60px auto;}
+
+  .empty-tip-box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 80%;
+    height: 1em;
+    text-align: center;
+    font-size: 16px;
+    color:#888;
+  }
+
+</style>
+
+<title>&#x7B49;&#x7EA7;&#x7279;&#x6743;</title>
+</head>
+<body ontouchstart="" id="mainWrap">
+  <script type="text/html" id="vip-card-tpl">
+    <main>
+      <section class="cus-level-base">
+        <div class="">
+          <div class="cus-avatar" style="background-image:url({{avatar}})">
+            <div class="cus-curr-level  level{{myVipLevel.level}}"></div>
+          </div>
+          <div class="cus-name curr-customer-name">{{name}}</div>
+        </div>
+        <ul class="cus-level-list ui-flex justify-around">
+          {{each allLevel as item i}}
+          <li>
+            <div class="level-img level{{item.level}} {{if myVipLevel.level === item.level}}active{{/if}}"></div>
+            <div class="level-name">{{item.name}}</div>
+          </li>
+          {{/each}}
+        </ul>
+
+        <h2 class="cus-level-main">我的会员等级特权</h2>
+        <i class="iconfont cus-level-mainimg">&#xe66d;</i>
+        <div class="cus-level-mainval">{{myVipLevel.discount}}折</div>
+      </section>
+
+      <section class="cus-level-other">
+        <h2 class="cus-level-otit">其他会员等级特权</h2>
+        <ul class="ui-flex justify-around">
+          {{each allLevel as level j}}
+            {{if level.level !== myVipLevel.level}}
+            <li>
+              <div class="level-name">{{level.name}}</div>
+              <i class="iconfont level-img">&#xe66d;</i>
+              <div class="level-value">{{level.discount}}折</div>
+            </li>
+            {{/if}}
+          {{/each}}
+        </ul>
+      </section>
+      <div class="dvd-line"></div>
+    </main>
+  </script>
+
+  <!-- 内嵌的js -->
+  <script type="text/javascript" build="">
+    /* globals Zepto,template */
+    var Q = Zepto;
+    var pageView = {
+      init:function(){ this.getData(); },
+      getData:function(){
+        var wrap = Q('#mainWrap');
+        // 显示loading
+        Q.post('customerLevelIndex.json')
+          .done(function(data){
+            if(data.status==='0'){
+              wrap.html(template('vip-card-tpl',data.result));
+            }else{
+              wrap.html('<div class="empty-tip-box">'+(data.errmsg || '服务器繁忙')+'</div>');
+            }
+          })
+          .fail(function(){
+            wrap.html('<div class="empty-tip-box">未登录或服务器繁忙</div>');
+          })
+          .always(function(){
+            wrap.css('background-image','none');
+          });
+      }
+    }
+    pageView.init();
+  </script>
+
+</body>
+</html>
